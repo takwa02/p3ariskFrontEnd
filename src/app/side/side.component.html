@@ -1,0 +1,46 @@
+<div class="page-container">
+    <div class="sidebar" >
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="list-items">
+            <a routerLink="/home"  routerLinkActive="selected"  class="list-item">
+                <i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;    Home 
+             </a>
+            <a routerLink="/criteriaDefinition" *ngIf="isadmin" routerLinkActive="selected"  class="list-item">
+                <i class="fa fa-archive" aria-hidden="true"></i> &nbsp;&nbsp;  
+                Criteria Definition
+            </a>
+            <a routerLink="/SetCriteriaList"  *ngIf="isadmin" routerLinkActive="selected"  class="list-item">
+                <i class="fa fa-filter" aria-hidden="true"></i> &nbsp;  Set Criteria for year
+            </a>
+            <a routerLink="/criteriaVerification"  *ngIf="isadmin" routerLinkActive="selected" class="list-item">
+                <i class="fa fa-check-square-o" aria-hidden="true"></i> &nbsp; Criteria Verification
+            </a>
+            <a  routerLink="/audit" *ngIf="!isadmin" routerLinkActive="selected" class="list-item"  (click)="openDialog();">
+                <i class="fa fa-gavel" aria-hidden="true"></i> &nbsp;&nbsp; Audit Selection 
+            </a>
+           
+            <a routerLink="/userManagment"  *ngIf="isadmin" routerLinkActive="selected" class="list-item">
+                <i class="material-icons">people</i> 
+                User Management
+            </a>
+
+        </div>
+     
+    </div>
+    
+
+   <div class="page-content-container">
+    
+        <p>Bienvenue  {{username}}</p>  
+        <p *ngIf="isadmin">Accès administrative</p>
+        <p *ngIf="!isadmin">Accès utilisateur</p>
+    
+        <button mat-flat-button  *ngIf="show"  (click)="onSignOut()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp;logOut
+       </button>
+    
+  
+    
+        <router-outlet></router-outlet>
+   </div>
+</div>

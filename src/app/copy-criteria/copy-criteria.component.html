@@ -1,0 +1,93 @@
+
+<h1> Copy the criteria </h1>
+<br><br><br>
+<form [formGroup]="CriteriaA" class="container">  
+<div>
+    <tr>
+        <th>
+    <label>
+        CriteriaName:</label>
+        </th>
+        <th>
+        <input type="text" formControlName="CriteriaName">
+        </th>
+    </tr>
+</div>
+<div>
+    <tr>
+        <th> <label>
+        Description:</label></th>
+        <th>
+        <textarea formControlName="Description"></textarea>
+    </th>
+</tr>
+</div>
+<div>
+    <tr>
+        <th>
+    <label>
+        Criteria Type:</label></th>
+        <th>
+            <select ng_model="CriteriaType"  formControlName="CriteriaType">
+                <option selected="selected" value="" hidden="hidden" > choose a criteria </option>
+                <option value="Comparaison Against Peers" selected >Comparaison Against Peers</option>
+                <option value="Ratio Test">Ratio Test</option>
+                <option value="Logical Test">Logical Test</option>
+         </select>
+        </th>
+    </tr>
+</div>
+<div>
+    <tr>
+        <th>
+    <label>
+        Year Applicable:</label></th>
+        <th>
+        <select ng_model="YearApplicable"  formControlName="YearApplicable">
+            <option selected="selected" value="" hidden="hidden" > choose a year to apply </option>
+                <option value="2019">2019
+                <option value="2018">2018
+                <option value="2017">2017
+                <option value="2016">2016
+                <option value="2015">2015
+                <option value="2014">2014
+                <option value="2013">2013
+                <option value="2012">2012
+                <option value="2011">2011
+                <option value="2010">2010
+         </select>
+        </th>
+</tr>
+</div>
+<div>
+    <tr>
+        <th>
+    <label>
+        SQL Query:</label></th>
+        <th>
+        <textarea type="text" formControlName="Query"></textarea>
+    </th>
+</tr>
+</div>
+
+
+
+
+
+   
+     <button mat-flat-button  [disabled]="!CriteriaA.valid">Copy</button>
+ 
+  
+   
+     <a routerLink="/cancel"  routerLinkActive="selected"><button mat-flat-button>Cancel</button></a> 
+
+ 
+
+
+
+
+    <!--<button type="submit" >submit</button>-->
+
+
+
+</form> 

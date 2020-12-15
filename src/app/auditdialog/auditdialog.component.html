@@ -1,0 +1,15 @@
+<h2 class="alert"mat-dialog-title>ALERT</h2>
+<br><br>
+<mat-dialog-content class="mat-typography">
+  
+  <p >Audit Selection should only be executed once all the income tax returns have been filed and all 
+    the selection criteria have been finilized.         Once the audit selection has been executed,no challenges 
+    to the selection criteria for this year can be made.
+  </p>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <a routerLink="/audit" routerLinkActive="selected" class="list-item"><button mat-button mat-dialog-close>YES</button></a>
+    <a routerLink="/home"  routerLinkActive="selected"> <button mat-button [mat-dialog-close]="true" cdkFocusInitial>NO</button></a>
+</mat-dialog-actions>

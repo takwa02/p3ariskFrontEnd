@@ -1,0 +1,150 @@
+<h1 *ngIf="isadmin">Criteria Verification</h1>
+<h1 *ngIf="!isadmin">Audit Selection</h1>
+
+<form [formGroup]="CriteriaA"  class="container">
+   
+<label class="aa" for="année">Enter TAX Year Data to use for Verification :</label>
+
+<select id="année" ng-model="YearApplicable"  formControlName="YearApplicable">
+  <option selected="selected" value="" hidden="hidden" > choose a year to apply </option>
+        
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+    </select>
+    <button id="toggleVisibilityButton"  mat-flat-button [disabled]="!CriteriaA.valid" (click)="clickFunction();">Save</button>
+    
+    <a routerLink="/cancel"  routerLinkActive="selected"><button mat-flat-button >Cancel</button></a> 
+
+</form>
+
+
+
+
+<form [formGroup]="CriteriaB"  class="container1"  id="displaytable" style="display: none;">
+  
+
+<div>
+  <tr>
+      <th>
+  <label>
+      Economic Activity:</label></th>
+      <th>
+          <select ng_model="EconomicActivity"   formControlName="EconomicActivity" (change)="affichage($event)">
+              <option selected="selected" value="" hidden="hidden" > choose an economic activity </option>
+              <option  [ngValue]="activity.actLibell" *ngFor="let activity of secteurActiviteList" >{{activity.actLibell}}</option>
+            </select>
+      </th>
+     
+  </tr>
+</div>
+
+<!--<div>
+  <tr>
+      <th>
+  <label>
+      Total Criteria Score:</label></th>
+      <th>
+          <select ng_model="TotalCriteriaScore"  formControlName="TotalCriteriaScore">
+            <option selected="selected" value="" hidden="hidden" > operator </option>
+            <option value="inferieur"> < </option>
+            <option value="egal"> =</option>
+            <option value="superieur">></option>
+            <option value="inferieur ou egal"><=</option>
+            <option value="superieur ou egal">>=</option>
+            <option value="different"><></option>
+       </select>
+      </th>
+      <input type="text" ng-model="valeur" formControlName="valeur" placeholder="put a value..">
+  </tr>
+</div>-->
+
+
+<!--<div>
+  <tr>
+      <th>
+  <label>
+      Audit Result:</label></th>
+      <th>
+          <select ng_model="AuditResult"  formControlName="AuditResult">
+            <option selected="selected" value="" hidden="hidden" > operator </option>
+            <option value="inferieur"> < </option>
+            <option value="egal"> =</option>
+            <option value="superieur">></option>
+            <option value="inferieur ou egal"><=</option>
+            <option value="superieur ou egal">>=</option>
+            <option value="different"><></option>
+       </select>
+      </th>
+      <input type="number" ng-model="valeur" formControlName="valeur1" placeholder="put a value..">
+  </tr>
+</div>-->
+
+
+<!--<button mat-flat-button [disabled]="!CriteriaB.valid">Print</button>
+<button mat-flat-button >Close</button>-->
+<br><br>
+<div class=" my-custom-scrollbar">
+  <table >
+    <thead>
+      <tr>
+        <th class="bb" rowspan ="2" >Taxpayer Number</th>
+        <th class="bb" rowspan="2" >Taxpayer Name</th>
+       
+        <th class="bb" rowspan="2" >Economic Activity</th>  
+         <th class="bb"  colspan="23" >Criteria Score</th>
+         <th class="bb"  colspan="23" >Total Score</th>
+         
+      </tr>
+      <tr>
+
+        <th   *ngFor="let id of listCriteriaId ">{{id}}</th>
+      </tr>
+    </thead> 
+    <tbody>
+    
+      <tr class="bb" *ngFor="let c of critereVerificationList ">
+        <td class="bb">{{c.tpCategory.ctrMatfis}}</td>
+        <td class="bb" >{{c.tpCategory.ctrRaison}}</td> 
+        <td class="bb">{{c.tpCategory.actLibell}}</td>
+        <td class="bb" *ngFor="let id of listCriteriaId ">
+          <div *ngIf="existsId(id)">
+            <div *ngFor="let t of c.tempSelectScoreList ">
+               <div *ngIf="id==t.criteriaId">
+             
+              {{t.score}}
+               </div>
+              </div>
+           </div>
+           <div *ngIf="!existsId(id)">
+           
+             0    
+          
+            </div>
+        </td>
+        <td class="bb">{{c.totalScore}}</td>
+        
+        
+      </tr> 
+    
+      </tbody>
+  </table>
+  <div class="box-footer ">
+  <ul  class="pagination pagination-sm no-margin pull-right">
+    <li><a  class="aa" (click)="previousClick()" >Previous</a></li>
+   
+    <li><a class="aa" (click)="nextClick()" >Next</a></li>
+  </ul>
+</div>
+</div>
+
+
+</form>

@@ -1,0 +1,81 @@
+<h1>Edit a Criteria </h1>
+<br><br><br>
+<div>
+  <form (ngSubmit)="onSubmit()" class="container">
+
+    <div class="form-group">
+        <tr>
+            <th>
+                 <label for="criteria_id">id</label>
+            </th>
+            <th>
+                <input type="text" class="form-control" id="criteria_id" required [(ngModel)]="criteria.criteriaId" name="criteria_id">
+            </th>
+        </tr>
+    </div>
+
+    <div class="form-group">
+        <tr>
+            <th>
+                 <label for="crit_name">crit_name</label>
+            </th>
+            <th>
+                <input type="text" class="form-control" id="crit_name" required [(ngModel)]="criteria.critName" name="crit_name">
+            </th>
+        </tr>
+    </div>
+
+    <div class="form-group">
+        <tr>
+            <th> 
+                <label for="crit_desc">Description</label>
+            </th>
+            <th> 
+                <input type="text" class="form-control" id="crit_desc" required [(ngModel)]="criteria.critDesc" name="crit_desc">
+            </th>
+
+         </tr>
+    </div>
+
+
+    <div>
+        <tr>
+            <th>
+                 <label for="crit_type"> Criteria Type:</label>
+            </th>
+            <th>
+                <select ng_model="CriteriaType"  class="form-control" id="crit_type" required [(ngModel)]="criteria.critType" name="crit_type">
+                    <option selected="selected" value="" hidden="hidden" > choose a criteria </option>
+                    <option value="C" >Comparaison Against Peers</option>
+                    <option value="R">Ratio/Range Test</option>
+                    <option value="L">Logical Test</option>
+             </select>
+            </th>
+        </tr>
+    </div>
+
+   
+
+      <div>
+        <tr>
+            <th>
+                <label for="sql_query">SQL Query:</label>
+            </th>
+            <th>
+            <textarea type="text" class="form-control" id="sql_query" required [(ngModel)]="criteria.sqlQuery" name="sql_query"></textarea>
+        </th>
+    </tr>
+    </div>
+
+
+   <button mat-flat-button type="submit" class="btn btn-success">Edit</button> 
+    <a routerLink="/cancel"  routerLinkActive="selected"><button mat-flat-button  >Cancel</button></a> 
+  </form>
+</div>
+
+<!--<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button mat-flat-button class="btn btn-success" (click)=" updateCriteria()">update</button>
+  <a routerLink="/cancel"  routerLinkActive="selected"><button mat-flat-button  >Close</button></a> 
+</div>-->
+

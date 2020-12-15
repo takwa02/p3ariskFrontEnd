@@ -1,0 +1,124 @@
+
+
+<h1> Scoring Definition</h1>
+
+
+<br><br>
+<form  class="container">
+   
+            <th>
+             <label> Id:</label></th>
+             <th>
+        <input type="text" ng-model="id" name="id"  [(ngModel)]="criteria.criteriaId">
+    </th>
+
+    
+
+    
+        <th>
+    <label>
+        CriteriaName:</label>
+        </th>
+        <th>
+        <input type="text" name="critName"  [(ngModel)]="criteria.critName">
+        </th>
+    
+
+        <br>
+        <th> <label>
+        Description:</label></th>
+        <th>
+        <input type="text" name="critDesc" [(ngModel)]="criteria.critDesc">
+    </th>
+
+
+        <th>
+    <label>
+        Criteria Type:</label></th>
+        <th>
+            <input type="text" name="critType"  [(ngModel)]="criteria.critType">
+        </th>
+
+
+
+  <br><br>
+
+
+    <tr>
+        <th>
+    <label>
+        Year Applicable:</label></th>
+        <th>
+            <tr  *ngFor="let annualcriteria of annualCriterias ">
+                <td>{{annualcriteria.criteriaYear}}</td>
+                       
+              </tr>
+        </th>
+    </tr>
+
+  <br><br>
+
+    
+    <div *ngIf="critType=='L'" class="table-wrapper-scroll-y my-custom-scrollbar">
+      <table class="table table-bordered table-striped mb-0">
+        <thead>
+          <tr>
+            <th>Criteria Result</th>
+            <th>Score</th>
+            <th>Range Id</th>
+            <th>Lower Limit</th>
+            <th>Upper Limit</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+       
+          <tr  *ngFor="let criteria of scoreCriterias ">
+            <td>{{criteria.scoreResult}}</td>
+            <td>{{criteria.score}}</td>
+            <td>{{criteria.rangeId}}</td>
+            <td>{{criteria.lowerLimit}}</td>
+            <td>{{criteria.upperLimit}}</td>
+        
+           
+         
+          </tbody>
+      </table>
+      <button mat-flat-button (click)="openDialog()">Add</button>
+    </div>
+    
+  <br>
+    <div *ngIf="critType=='C'  || critType=='R'" class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-striped mb-0">
+          <thead>
+            <tr>
+              <th>Range Id</th>
+              <th>Lower Limit</th>
+              <th>Upper Limit</th>
+              <th>Score</th>
+              </tr>
+          </thead>
+          <tbody>
+         
+           <tr  *ngFor="let criteria of scoreCriterias ">
+              <td>{{criteria.rangeId}}</td>
+              <td>{{criteria.lowerLimit}}</td>
+              <td>{{criteria.upperLimit}}</td>
+              <td>{{criteria.score}}</td>
+              </tbody>
+        </table>
+        
+      </div>
+  
+
+
+
+   
+     
+        <div class="example-button-row">
+          <button mat-flat-button (click)="openDialog()">Add</button>
+       
+     <a routerLink="/SetCriteriaList"  routerLinkActive="selected"><button mat-flat-button  >Return</button></a> 
+      </div>
+</form> 

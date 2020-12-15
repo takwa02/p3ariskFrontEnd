@@ -1,0 +1,66 @@
+<h1>Audit Selection Criteria for Year</h1>
+<br>
+<label class="aa" for="année">Year :</label>
+
+<select id="annee" ng-model="YearApplicable" [(ngModel)]="criteriaYear"(change)="onChange($event)">
+  <option selected="selected" value="" hidden="hidden" > choose a year to apply </option>
+        
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+  </select>
+
+
+
+
+
+  <br>
+  
+ 
+
+    <div class="my-custom-scrollbar">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name </th>
+            <th>description</th>
+            <th>type</th>
+            <th>score</th>
+         
+          </tr>
+        </thead>
+        <tbody>
+       
+          <tr  *ngFor="let annualCrit of annualCritList | async">
+            <td>{{annualCrit.criteriaDef.criteriaId}}</td>
+            <td>{{annualCrit.criteriaDef.critName}}</td>
+            <td>{{annualCrit.criteriaDef.critDesc}}</td>
+            <td>{{annualCrit.criteriaDef.critType}}</td>
+            <td><a [routerLink]="['/scoring',annualCrit.criteriaDef.criteriaId]"  routerLinkActive="selected"> <button mat-flat-button >Scoring Definition</button></a></td>
+          
+          </tr>
+          </tbody>
+      </table>
+      
+    </div>
+  
+  
+  
+  
+
+  <div class="example-button-row">
+    <a [routerLink]="['/addAnnualCriteria',criteriaYear]"  routerLinkActive="selected"><button mat-flat-button>Add</button></a>
+   
+   
+    <a routerLink="/home"  routerLinkActive="selected"><button mat-flat-button >Close</button></a>
+  </div>
+  

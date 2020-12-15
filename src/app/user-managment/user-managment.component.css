@@ -1,0 +1,115 @@
+th , td, tr  {
+    /*border-collapse: collapse;*/
+    width: 200px;
+    padding: 20px;
+     padding-right: 20px;
+    table-layout: fixed;
+    padding-right: 50px;
+    text-align: center;
+    
+    color: rgb(255, 255, 255);
+    height: 10px;
+    
+    
+    
+
+  }
+
+  th, td {
+  
+    border-bottom: 1px solid rgb(212, 109, 41);
+    width: 15%;
+    font-size:16px;
+  }
+
+  th{
+    height:80px;
+  }
+
+
+ 
+
+  tbody tr:hover {background-color: #f78c0198;}
+ 
+
+ 
+  table{
+      text-align-last: center;
+      /*text-decoration-color: rgb(255, 255, 255);*/
+      
+      background-color: rgba(8, 7, 7, 0.712); 
+      box-shadow: 1px 1px 41px #ff8d0c;
+      width: 1440px;
+      height: 500px;  
+      border: medium solid #fa770b;
+      border-collapse: collapse;
+  }
+
+  .my-custom-scrollbar {
+    width: 1460px;
+    height: 500px; 
+    margin-left: 100px;
+    overflow-y: scroll;
+    box-shadow: 1px 1px 41px #ff8d0c;
+    }
+  
+
+
+  .example-button-row button {
+ 
+  color: rgb(255, 255, 255);
+  background-color:rgb(20, 20, 20);
+  font-size: 18px;
+  text-decoration: none;
+  margin: 50px;
+  text-align: center;
+  padding: 10px 24px;
+  width: 200px;
+  transition-duration: 0.4s;
+  border:orange;
+  border-style: double;
+  cursor : pointer;
+  left:500px;
+  top:20px;
+  
+ 
+}
+.example-button-row button:hover{
+    background-color:orange; /* Green */
+    color: rgb(0, 0, 0); 
+    box-shadow: 0 10px 10px 0 rgba(255, 123, 0, 0.9),0 17px 50px 0 rgba(241, 241, 241, 0.19);
+    
+}
+
+
+select{
+   
+    
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+    border: 3px solid rgb(255, 136, 0);
+    border-radius: 8px;
+    background-color: rgba(250, 128, 6, 0.6);
+    color: #ffffff;
+    
+
+    
+  
+   
+   
+
+   }
+   select:focus{
+    border:3px solid rgb(255, 136, 0) ;
+    background-color: rgb(8, 8, 8);
+    color:rgb(255, 255, 255);
+    
+       
+   }
+
+
+  
+  
+     
+  

@@ -1,0 +1,53 @@
+<h1>Criteria List</h1>
+
+
+
+
+
+  
+ 
+
+    <div class="my-custom-scrollbar">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Criteria Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Year</th>
+            <th>function</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+       
+          <tr  *ngFor="let criteria of critList | async">
+            <td>{{criteria.criteriaId}}</td>
+            <td>{{criteria.critName}}</td>
+            <td>{{criteria.critDesc}}</td>
+            <td>{{criteria.critType}}</td>
+            <td>{{criteria.lastcriteriaYear}}</td>
+            <td><a [routerLink]="['/edit',criteria.criteriaId]"  routerLinkActive="selected"> <button mat-flat-button ><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button></a></td>
+           
+          </tr>
+          </tbody>
+      </table>
+      
+    </div>
+  
+  
+  
+  
+
+  <div class="example-button-row">
+    <a routerLink="/add"  routerLinkActive="selected"><button mat-flat-button>Add</button></a>
+    
+    
+     <a routerLink="/home"  routerLinkActive="selected"><button mat-flat-button >Close</button></a>
+   
+    
+
+    
+  </div>
+  

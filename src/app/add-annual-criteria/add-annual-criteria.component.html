@@ -1,0 +1,55 @@
+<h1>add a Criteria </h1>
+<br><br><br>
+
+
+
+  <br>
+  <div  class="panel panel-primary">
+ 
+
+    <div class=" my-custom-scrollbar">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Criteria Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+            
+          <tr  *ngFor="let criteria of critList | async" >
+            <td><input type="checkbox" id="checked" name="criteriacheck" value="criteriaforyear" ngModel (ngModelChange)="onChange(criteria.criteriaId,$event)"  ></td>
+            <td>{{criteria.criteriaId}}</td>
+            <td>{{criteria.critName}}</td>
+            <td>{{criteria.critDesc}}</td>
+            <td>{{criteria.critType}}</td>
+          
+            
+           
+          </tr>
+          </tbody>
+      </table>
+      
+    </div>
+  </div>
+  
+  
+  
+
+  <div class="example-button-row">
+    <a routerLink="/SetCriteriaList"  routerLinkActive="selected"><button mat-flat-button (click)="onSubmit()">Add</button></a>
+    <a routerLink="/SetCriteriaList"  routerLinkActive="selected"><button mat-flat-button (click)="onSubmit()">Cancel</button></a>
+    
+    
+    
+    
+
+    
+  </div>
+  
+

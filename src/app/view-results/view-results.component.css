@@ -1,0 +1,137 @@
+label{
+    width:150px;
+    color: white;
+    display:inline-flex;
+    text-align: center;
+    
+  }
+
+
+  .aa{
+    width:300px;
+    color: white;
+    display:inline-flex;
+    text-align: center;
+
+  }
+  select{
+   
+    
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+    border: 3px solid rgb(255, 136, 0);
+    border-radius: 8px;
+    background-color: rgba(250, 128, 6, 0.6);
+    color: #ffffff;
+    
+  
+   
+   
+
+   }
+   select:focus{
+    border:3px solid rgb(255, 136, 0) ;
+    background-color: rgb(8, 8, 8);
+    color:rgb(255, 255, 255);
+    
+       
+   }
+
+   button{
+    color: rgb(255, 255, 255);
+    background-color:rgb(20, 20, 20);
+    font-size: 18px;
+    text-decoration: none;
+    margin: 20px;
+    text-align: center;
+    padding: 10px 24px;
+    width: 150px;
+    transition-duration: 0.4s;
+    border:orange;
+    border-style: double;
+    cursor : pointer;
+    
+    display: inline-block;
+    top: 0px;
+    left:100px;
+  
+  }
+button:hover{
+  background-color:orange; /* Green */
+  color: rgb(255, 253, 251); 
+  box-shadow: 0 10px 10px 0 rgba(255, 123, 0, 0.9),0 17px 50px 0 rgba(241, 241, 241, 0.19);
+}  
+
+th , td, tr  {
+  border-collapse: collapse;
+  width: 150px;
+  padding: 1px;
+  padding-left: 1px;
+  table-layout: fixed;
+  
+  text-align: right;
+  /*overflow-x: scroll; */
+  
+  
+
+}
+.matHeaderCellDef  {
+padding-right: 50px;
+
+}
+
+
+table{
+    margin-left:15%; 
+    margin-right:15%;
+    padding-top: 10px;
+    background-color: rgba(8, 7, 7, 0.9); 
+    box-shadow: 1px 1px 41px #ff8d0c
+   
+       
+}
+.container1{
+    height: 700px;
+    width: 1500px;
+    padding: 10px;
+    margin-left: 30px;
+    background-color: rgba(10, 10, 10, 0.4);
+    border-radius: 8px;
+    border: rgba(255, 123, 0, 0.5);
+
+}
+
+
+input {
+  width: 200px;
+  height: 40px;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid orange;
+  border-radius: 8px ;
+
+  border-bottom: 2px solid orange;
+  margin: 10px;
+
+  background-color:  rgba(15, 15, 15, 0.6);
+  color: #ffffff;
+  
+  }
+  input:focus{ 
+      border:3px solid rgb(255, 136, 0) ;
+      background-color: rgba(139, 138, 136, 0.2);
+  }
+
+
+.fil{
+    background-image: url('../.././assets/f2.png');
+    background-repeat: no-repeat;
+    background-size: contain ;
+    padding-left: 35px;
+    
+   
+    
+   
+  }
